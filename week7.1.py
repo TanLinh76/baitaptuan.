@@ -1,28 +1,29 @@
-"""Lời giải Bài tập 01: Vòng lặp for"""
-# TODO 1
-n = int(input("Nhập số: "))
-for i in range(1, 11):
-    print(f"{n} x {i} = {n * i}")
+"""Official solution for Exercise 01 — functions and return values."""
 
-# TODO 2
-fruits = ["apple", "banana", "cherry", "date", "elderberry"]
-for i, fruit in enumerate(fruits, 1):
-    print(f"{i}. {fruit}")
+import math
 
-# TODO 3
-names = ["An", "Bình", "Châu"]
-scores = [8, 9, 7]
-for name, score in zip(names, scores):
-    print(f"{name}: {score} điểm")
 
-# TODO 4
-tong = sum(x for x in range(1, 101) if x % 2 == 0)
-print(f"Tổng số chẵn 1-100: {tong}")
+def chao(ten: str) -> str:
+    """Trả về lời chào cho ``ten``."""
+    return f"Xin chào {ten}!"
 
-# TODO 5
-n = int(input("Số phần tử Fibonacci: "))
-a, b = 0, 1
-for _ in range(n):
-    print(a, end=" ")
-    a, b = b, a + b
-print()
+
+def tinh_dien_tich_hinh_tron(ban_kinh: float) -> float:
+    """Trả về diện tích hình tròn."""
+    return math.pi * ban_kinh**2
+
+
+def la_so_chan(so: int) -> bool:
+    """Trả về True khi ``so`` là số chẵn."""
+    return so % 2 == 0
+
+
+def main() -> None:
+    """Chạy một vài ví dụ có output quan sát được."""
+    print(chao("An"))
+    print(f"Diện tích r=5: {tinh_dien_tich_hinh_tron(5):.2f}")
+    print(f"4 là số chẵn: {la_so_chan(4)}")
+
+
+if __name__ == "__main__":
+    main()
